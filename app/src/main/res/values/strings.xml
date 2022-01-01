@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Asystent Nauczyciela</string>
+    <string name="asystent_nauczyciela">Asystent Nauczyciela</string>
+    <string name="przedmioty">Przedmioty</string>
+    <string name="jan_kowalski">Jan Kowalski</string>
+    <string name="teacher_photo">Teacher Photo</string>
+    <string name="joanna_muras">Joanna Muras</string>
+    <string name="powr_t">Powrót</string>
+    <string name="dodaj">Dodaj</string>
+    <string name="przedmiot">Przedmiot</string>
+    <string name="imi">Imię</string>
+    <string name="nazwisko">Nazwisko</string>
+    <string name="usu">Usuń</string>
+    <string name="zaj_cia">Zajęcia</string>
+    <string-array name="days">
+        <item>Poniedziałek</item>
+        <item>Wtorek</item>
+        <item>Środa</item>
+        <item>Czwartek</item>
+        <item>Piątek</item>
+        <item>Sobota</item>
+        <item>Niedziela</item>
+    </string-array>
+</resources>

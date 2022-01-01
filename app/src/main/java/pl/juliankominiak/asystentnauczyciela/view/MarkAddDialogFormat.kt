@@ -1,0 +1,36 @@
+package pl.juliankominiak.asystentnauczyciela.view
+
+import android.app.Dialog
+import android.os.Bundle
+import android.view.View
+import android.widget.EditText
+import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
+import pl.juliankominiak.asystentnauczyciela.R
+import pl.juliankominiak.asystentnauczyciela.model.Mark
+import pl.juliankominiak.asystentnauczyciela.model.Subject
+import pl.juliankominiak.asystentnauczyciela.viewmodel.MarksListViewModel
+
+class MarkAddDialogFormat(private val viewModel: MarksListViewModel,
+                          private val myArguments: Bundle?) : DialogFragment() {
+
+    override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+        val inflater = requireActivity().layoutInflater
+        val dialogView: View = inflater.inflate(R.layout.dialog_add_mark, null)
+        val markInput: EditText = dialogView.findViewById(R.id.mark_input)
+        return activity?.let {
+            val builder = AlertDialog.Builder(it)
+            builder.setView(dialogView)
+                .setPositiveButton("Dodaj") { _, _ ->
+                    if (markInput.text.isNotEmpty()) {
+                        println(markInput.text.toString())
+                        viewModel.add(Mark(0, markInput.text.toString().toFloat(), myArguments?.get("studentId") as Long))
+                    }
+                }
+                .setNegativeButton("Anuluj") { _, _ ->
+                    dialog?.cancel()
+                }
+            builder.create()
+        } ?: throw IllegalStateException("Activity cannot be null")
+    }
+}

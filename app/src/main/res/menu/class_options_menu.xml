@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/class_delete"
+        android:title="Usuń" />
+    <item
+        android:id="@+id/class_set_hours"
+        android:title="Ustaw godziny" />
+</menu>
